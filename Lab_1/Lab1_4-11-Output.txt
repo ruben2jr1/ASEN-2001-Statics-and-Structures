@@ -1,0 +1,30 @@
+# Process for general solution.
+# For 1 Forces and 0 Moments
+# First step is to make all appropriate matrices unit matrices.
+# This yields.
+# The magnitude and unit direction of external forces:
+# Mag  i  j  k
+  900.00  0.00  0.00 -1.00
+# The magnitude and unit direction of external moments:
+# Mag  i  j  k
+# The magnitude and unit direction of reaction Forces/Moments:
+# Reaction Number  type(F/M)  i  j  k
+  Reaction:  1  F  0.00  1.00 0.00
+  Reaction:  2  F  1.00  0.00 0.00
+  Reaction:  3  F  0.00  0.00 1.00
+  Reaction:  4  F  1.00  0.00 0.00
+  Reaction:  5  F  0.00  0.00 1.00
+  Reaction:  6  F  0.00  0.00 1.00
+# We then computed b in Ax = b by adding all force components and moment components:
+# b = [-0.00, -0.00, 900.00, 360.00, 360.00, -0.00]
+# We can then calculate our A in Ax = b:
+  0.00  1.00  0.00  1.00  0.00 0.00
+  1.00  0.00  0.00  0.00  0.00 0.00
+  0.00  0.00  1.00  0.00  1.00 1.00
+  0.00  0.00  1.20  0.00  0.00 0.80
+  0.00  0.00  0.60  0.00  0.00 0.00
+  0.00  -0.80  -0.00  0.00  0.00 0.00
+# Which yields a solution x = A/b:
+Reaction 3: F with magnitude 600.00 With direction: <0.00 , 0.00 , 1.00> @ position: (-0.60 , 1.20 , 0.00)
+Reaction 5: F with magnitude 750.00 With direction: <0.00 , 0.00 , 1.00> @ position: (0.00 , 0.00 , 0.00)
+Reaction 6: F with magnitude -450.00 With direction: <0.00 , 0.00 , 1.00> @ position: (0.00 , 0.80 , 0.00)

@@ -1,0 +1,34 @@
+# Process for general solution.
+# For 3 Forces and 0 Moments
+# First step is to make all appropriate matrices unit matrices.
+# This yields.
+# The magnitude and unit direction of external forces:
+# Mag  i  j  k
+  400.00  -1.00  0.00 0.00
+  500.00  0.00  1.00 0.00
+  600.00  0.00  0.00 -1.00
+# The magnitude and unit direction of external moments:
+# Mag  i  j  k
+# The magnitude and unit direction of reaction Forces/Moments:
+# Reaction Number  type(F/M)  i  j  k
+  Reaction:  1  F  1.00  0.00 0.00
+  Reaction:  2  F  0.00  1.00 0.00
+  Reaction:  3  F  0.00  0.00 1.00
+  Reaction:  4  M  1.00  0.00 0.00
+  Reaction:  5  M  0.00  1.00 0.00
+  Reaction:  6  M  0.00  0.00 1.00
+# We then computed b in Ax = b by adding all force components and moment components:
+# b = [400.00, -500.00, 600.00, 1225.00, 750.00, -0.00]
+# We can then calculate our A in Ax = b:
+  1.00  0.00  0.00  0.00  0.00 0.00
+  0.00  1.00  0.00  0.00  0.00 0.00
+  0.00  0.00  1.00  0.00  0.00 0.00
+  0.00  0.00  0.00  1.00  0.00 0.00
+  0.00  0.00  0.00  0.00  1.00 0.00
+  0.00  0.00  0.00  0.00  0.00 1.00
+# Which yields a solution x = A/b:
+Reaction 1: F with magnitude 400.00 With direction: <1.00 , 0.00 , 0.00> @ position: (0.00 , 0.00 , 0.00)
+Reaction 2: F with magnitude -500.00 With direction: <0.00 , 1.00 , 0.00> @ position: (0.00 , 0.00 , 0.00)
+Reaction 3: F with magnitude 600.00 With direction: <0.00 , 0.00 , 1.00> @ position: (0.00 , 0.00 , 0.00)
+Reaction 4: M with magnitude 1225.00 With direction: <1.00 , 0.00 , 0.00> @ position: (0.00 , 0.00 , 0.00)
+Reaction 5: M with magnitude 750.00 With direction: <0.00 , 1.00 , 0.00> @ position: (0.00 , 0.00 , 0.00)
